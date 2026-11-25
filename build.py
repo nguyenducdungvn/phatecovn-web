@@ -15,7 +15,7 @@ SITE = 'https://phateco.vn/'
 TODAY = datetime.date.today().isoformat()
 
 LOGO = UP + '2025/01/phateco-new-2-2-e1736138637956-300x167.png'
-HERO = UP + '2025/01/z4724203369946_0e1082a2769ffd3808bbc4a39552b41a-2048x650-1.jpg'
+HERO = UP + '2025/11/ND-VA2.jpg'  # ảnh hiện trường Vũng Áng 2, không có chữ in sẵn
 
 # ---------- Dữ liệu ----------
 SERVICES = [
