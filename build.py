@@ -478,7 +478,19 @@ def main():
     open(os.path.join(OUT, 'sitemap.xml'), 'w').write(f'<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">{urls}</urlset>')
     open(os.path.join(OUT, 'robots.txt'), 'w').write(f'User-agent: *\nDisallow: /\n# Bản thử nghiệm: chặn Google lập chỉ mục để không trùng nội dung với phateco.com.\n# Khi chính thức thay thế: đổi thành "Allow: /" và thêm Sitemap: {SITE}sitemap.xml\n')
     open(os.path.join(OUT, '.nojekyll'), 'w').write('')
-    print(f'Đã sinh {len(PAGES)} trang vào docs/')
+    open(os.path.join(OUT, 'CNAME'), 'w').write('phateco.vn')
+    # Chép thêm ra thư mục gốc repo để GitHub Pages chạy được dù nguồn là '/ (root)' hay '/docs'
+    for name in os.listdir(OUT):
+        if name == 'assets':
+            continue
+        src, dst = os.path.join(OUT, name), os.path.join(ROOT, name)
+        if os.path.isdir(dst):
+            shutil.rmtree(dst)
+        if os.path.isdir(src):
+            shutil.copytree(src, dst)
+        else:
+            shutil.copy(src, dst)
+    print(f'Đã sinh {len(PAGES)} trang vào docs/ và thư mục gốc')
 
 if __name__ == '__main__':
     main()

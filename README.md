@@ -15,7 +15,8 @@ src/pages/dich-vu/*.html # nội dung 10 trang dịch vụ
 assets/css/site.css      # giao diện
 assets/js/site.js        # menu điện thoại, lọc dự án, gửi form, Google Analytics
 assets/js/config.js      # cấu hình: mã Google Analytics, máy chủ nhận form
-docs/                    # KẾT QUẢ – đây là thư mục đem lên hosting
+docs/                    # KẾT QUẢ – thư mục đem lên hosting
+(index.html, dich-vu/, …)  # bản sao kết quả ở thư mục gốc, để GitHub Pages chạy được dù chọn nguồn '/ (root)' hay '/docs'
 ```
 
 Trang đã có: Trang chủ · Giới thiệu (kèm lịch sử 20 năm, video) · Dịch vụ + 10 trang dịch vụ · Dự án (có bộ lọc) · Case study phao neo Đại Hùng · Năng lực & chứng nhận · Tuyển dụng (form ứng tuyển có CV) · Liên hệ (form báo giá, bản đồ, 5 văn phòng) · Trang chủ tiếng Anh · 404.
@@ -34,12 +35,12 @@ Sau 1–2 phút: `https://nguyenducdungvn.github.io/phatecovn-web/`
 
 ### Cách 2 – Gắn tên miền phateco.vn vào GitHub Pages
 1. Settings → Pages → *Custom domain*: nhập `phateco.vn` → Save (GitHub tự tạo file `docs/CNAME`).
-2. Tại nơi quản lý DNS của phateco.vn (hiện là Turbify), tạo bản ghi:
+2. Tại nơi quản lý DNS của phateco.vn – **máy chủ tên miền hiện là ns1–ns4.zonedns.vn** (nhà đăng ký nơi mua tên miền, KHÔNG phải Turbify; Turbify chỉ quản lý phateco.com) – sửa bản ghi:
    - `A` @ → `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`
    - `CNAME` www → `nguyenducdungvn.github.io`
 3. Chờ DNS cập nhật (vài phút đến vài giờ), quay lại Settings → Pages bật **Enforce HTTPS**.
 
-> Lưu ý: nếu phateco.vn đang chuyển hướng về phateco.com hoặc đang dùng cho email, kiểm tra kỹ các bản ghi hiện có (MX, TXT) trước khi sửa – chỉ thay bản ghi A/CNAME của website.
+> Lưu ý: phateco.vn đang dùng email Google Workspace (bản ghi MX ASPMX.L.GOOGLE.COM…). **Giữ nguyên MX, TXT** – chỉ thay bản ghi A của `@` (hiện 103.28.36.94) và bản ghi của `www`.
 
 ### Cách 3 – Hosting riêng
 Tải toàn bộ nội dung thư mục `docs/` lên thư mục web của tên miền (ví dụ `public_html` trong DirectAdmin).

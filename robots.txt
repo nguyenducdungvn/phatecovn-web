@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /
+# Bản thử nghiệm: chặn Google lập chỉ mục để không trùng nội dung với phateco.com.
+# Khi chính thức thay thế: đổi thành "Allow: /" và thêm Sitemap: https://phateco.vn/sitemap.xml
